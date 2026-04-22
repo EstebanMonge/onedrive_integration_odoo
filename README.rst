@@ -29,6 +29,7 @@ Credits
 * Developer:
             (V16) Aslam A K,
             (V17) Jumana Haseen,
+            (V17) Esteban Monge,
 Contact: odoo@cybrosys.com
 
 Contacts
@@ -46,9 +47,9 @@ Maintainer
 .. image:: https://cybrosys.com/images/logo.png
    :target: https://cybrosys.com
 
-This module is maintained by Sempai Space
-This module is maintained by Cybrosys Technologies.
-For support and more information, please visit https://www.cybrosys.com
+* This module is maintained by Sempai Space
+* This module is maintained by Cybrosys Technologies.
+* For support and more information, please visit https://www.cybrosys.com
 
 Further information
 ===================
