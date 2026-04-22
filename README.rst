@@ -27,9 +27,9 @@ Company
 Credits
 -------
 * Developer:
-            (V16) Aslam A K,
-            (V17) Jumana Haseen,
-            (V17) Esteban Monge,
+ * (V16) Aslam A K,
+ * (V17) Jumana Haseen,
+ * (V17) Esteban Monge,
 Contact: odoo@cybrosys.com
 
 Contacts
