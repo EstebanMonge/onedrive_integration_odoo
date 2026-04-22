@@ -259,3 +259,43 @@ class OneDriveDashboard(models.Model):
         except Exception as e:
             _logger.exception("Error creating folder in OneDrive")
             return {'error': str(e)}
+
+    def get_or_create_folder_for_record(self, folder_name):
+
+        token = self.search([], order='id desc', limit=1)
+
+        if not token:
+            raise UserError("No token found")
+
+        base_folder = self.env['ir.config_parameter'].get_param(
+            'onedrive_integration_odoo.folder_id', ''
+        )
+
+        headers = {
+            'Authorization': 'Bearer ' + token.onedrive_access_token,
+            'Content-Type': 'application/json'
+        }
+
+        # Step 1: check if exists
+        list_url = f"https://graph.microsoft.com/v1.0/me/drive/root:{base_folder}:/children"
+        response = requests.get(list_url, headers=headers).json()
+
+        for item in response.get('value', []):
+            if item.get('name') == folder_name:
+                return item.get('webUrl')
+
+        # Step 2: create folder
+        create_url = f"https://graph.microsoft.com/v1.0/me/drive/root:{base_folder}:/children"
+
+        payload = {
+            "name": folder_name,
+            "folder": {},
+            "@microsoft.graph.conflictBehavior": "fail"
+        }
+
+        result = requests.post(create_url, headers=headers, json=payload).json()
+
+        if 'error' in result:
+            raise UserError(str(result))
+
+        return result.get('webUrl')

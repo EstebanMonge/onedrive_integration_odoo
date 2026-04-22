@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit Sale Order Form View -->
+    <record id="view_order_form_onedrive_button" model="ir.ui.view">
+        <field name="name">sale.order.form.onedrive.button</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_open_onedrive_folder"
+                        type="object"
+                        string="OneDrive"
+                        class="oe_highlight"
+                        icon="fa-folder-open"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
