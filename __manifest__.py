@@ -26,9 +26,9 @@
     'summary': """Upload and download files in Onedrive using odoo """,
     'description': """This module was developed to upload files to Onedrive as 
     well as access files from Onedrive in Odoo.""",
-    'author': 'Cybrosys Techno Solutions',
-    'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
+    'author': 'Cybrosys Techno Solutions, Sempai Space',
+    'company': 'Cybrosys Techno Solutions, Sempai Space',
+    'maintainer': 'Cybrosys Techno Solutions, Sempai Space',
     'website': "https://www.cybrosys.com",
     'depends': ['base_setup'],
     'data': [
